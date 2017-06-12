@@ -1,6 +1,7 @@
-# ES6 的彩票项目
+# ES6 Demo
 
-这个项目的功能有以下几部分
+这个项目的功能有以下几部分，先编写一个编译es6的任务自动化+热更新，之后在app/js/class下编写es6 demo，
+记得在app/js/index.js中添加es6 demo的JS。
 
 ## 项目构建
 
