@@ -1,1 +1,2 @@
-import './class/let-const';
+// import './class/let';
+import './class/const';
