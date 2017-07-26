@@ -39,7 +39,7 @@ gulp --watch
 
 - 数组操作
     - 填充、类型转换、遍历等
-- 字符串扩展
+- [字符串扩展](https://github.com/guangxiao/es6-demos/issues/4)
     - 字符串模板、字符处理、补白操作
 - 函数扩展
     - 箭头函数、rest参数、默认值
