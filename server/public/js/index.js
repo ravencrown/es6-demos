@@ -8701,58 +8701,70 @@
 /* 299 */
 /***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	{
-	    // 字符 unicode 表示方法
-	    console.log('a', 'a'); // 正式范围为 \u0000 - \uFFFF
-	    console.log('s', '\u20BB7'); // 超出范围 0xFFFF
-
-	    console.log('s', '\uD842\uDFB7'); // 输出 𠮷
+	    // 二进制：0b
+	    console.log("B", 62);
+	    console.log("b", 62);
+	    // 八进制：0o
+	    console.log("o", 503);
+	    console.log("O", 498);
 	}
 
 	{
-	    // codePointAt()
-	    var s = '𠮷';
-	    console.log('length', s.length);
-	    console.log('0', s.charAt(0)); // 输出 0 �
-	    console.log('1', s.charAt(1)); // 输出 1 �
-
-	    // charCodeAt 只能取两个字节
-	    console.log('at0', s.charCodeAt(0)); // 输出 at0 55362
-	    console.log('at1', s.charCodeAt(1)); // 输出 at1 57271
-
-	    var s1 = '𠮷a';
-	    console.log('length', s1.length);
-	    console.log('code0', s1.codePointAt(0)); // 输出 code0 134071
-	    console.log('code0', s1.codePointAt(0).toString(16)); // 输出 code0 20bb7 -- 取前四个字节
-
-	    console.log('code1', s1.codePointAt(1)); // 输出 code1 57271 -- 取第三第四个字节
-	    console.log('code2', s1.codePointAt(2)); // 输出 code2 97(a) -- 取第五第六字节
+	    // Number.isFinite 检查一个数值是否为非无穷
+	    console.log("15", Number.isFinite(15));
+	    console.log("NaN", Number.isFinite(NaN));
+	    console.log("1/0", Number.isFinite(1 / 0));
 	}
 
 	{
-	    // 测试字符是由2个字节还是4个字节组成的 -- codePointAt()
-	    var is32bit = function is32bit(c) {
-	        return c.codePointAt(0) > 0xFFFF;
-	    };
-
-	    console.log(is32bit("𠮷"));
-	    console.log(is32bit("a"));
+	    console.log("NaN", Number.isNaN(NaN));
+	    console.log("0", Number.isNaN(0));
 	}
 
 	{
-	    // String.fromCodePoint() 码点返回对应字符
-	    console.log(String.fromCharCode("0x20BB7")); // 输出ஷ
-	    console.log(String.fromCodePoint("0x20BB7")); // 𠮷
+	    // 判断是不是整数
+	    console.log("Number.isInteger", Number.isInteger(23));
+	    console.log("Number.isInteger", Number.isInteger(23.1));
+	    console.log("Number.isInteger", Number.isInteger(23.0));
 	}
 
 	{
-	    // 字符串遍历器接口
-	    var str = '\uD842\uDFB7abc';
-	    for (var i = 0; i < str.length; i++) {
-	        console.log('es5', str[i]);
-	    }
+	    // Number.parseInt === parseInt
+	    // Number.parseFloat === parseFloat
+	}
+
+	{
+	    // ES6 极小常量，极大常量
+	    console.log("Number.EPSILON", Number.EPSILON);
+	    console.log("Number.MAX_SAFE_INTEGER", Number.MAX_SAFE_INTEGER);
+	    console.log("Number.MIN_SAFE_INTEGER", Number.MIN_SAFE_INTEGER);
+	}
+
+	{
+	    // Number.MAX_SAFE_INTEGER & Number.MIN_SAFE_INTEGER
+	    // 判断一个整数是否落在安全整数范围内：Number.isSafeInterger()
+	    console.log("Number.isSafeInteger");
+	    console.log("10", Number.isSafeInteger(10));
+	    console.log("a", Number.isSafeInteger("a"));
+	}
+
+	{
+	    // Math.trunc 去除一个数的小数部分，返回整数部分
+	    console.log(4.1, Math.trunc(4.1));
+
+	    // Math.sign 判断一个数是正数还是负数
+	    console.log(-5, Math.sign(-5));
+	    console.log(0, Math.sign(0));
+	    console.log(1, Math.sign(1));
+	    console.log("1", Math.sign("1"));
+	    console.log("foo", Math.sign("foo"));
+	}
+
+	{
+	    // 立方根 Math.cbrt()
 	}
 
 /***/ })
