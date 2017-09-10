@@ -1,5 +1,7 @@
-// import './class/let';
-// import './class/const';
 import 'babel-polyfill';
-// import './class/string';
-import './class/number';
+import Lottery from './lottery';
+
+// import demo from './shareDemo/stringTemp';
+
+
+
