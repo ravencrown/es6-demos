@@ -1,7 +1,5 @@
 import 'babel-polyfill';
-import Lottery from './lottery';
+// import Lottery from './lottery';
 
-// import demo from './shareDemo/stringTemp';
-
-
+import demo from './shareDemo/stringTemp';
 

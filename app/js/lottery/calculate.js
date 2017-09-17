@@ -17,7 +17,31 @@ class Calculate {
         }
         return count;
     }
-    
+
+    /**
+     * [computeBonus 奖金范围预测] 
+     * @param {number} active [当前选中的号码]
+     * @param {string} play_name [当前的玩法标识]
+     * @return {array}           [奖金范围]
+     */
+    computeBonus(active, play_name) {
+        const play = play_name.split('');
+        const self = this;
+        let arr = new Array(play[1] * 1).fill(0);
+        let min, max;
+        if (play[0] === 'r') {
+            // 最小命中数
+            let min_active = 5 - (11 -active);
+            if (min_active > 0) {
+                // play[1] 当前玩法的基数
+                if (min_active - play[1] >= 0) {
+                    
+                }
+            }
+        }
+
+    }
+
     // 静态方法
     /**
      * [combine 组合运算]
@@ -29,7 +53,7 @@ class Calculate {
         let allResult = [];
         (function f(arr, size, result) {
             let arrLen = arr.length;
-            
+
             if (size > arrLen) {
                 return;
             }
